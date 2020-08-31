@@ -1,3 +1,4 @@
 /attachments/*
 /mail_data/*
+/__pycache__/
 .env

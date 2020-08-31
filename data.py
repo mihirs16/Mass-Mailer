@@ -10,7 +10,7 @@ def load_contacts(filename = 'mail_data/contacts.csv', name = 'contact_name', em
         contacts.append({
             'name': df.iloc[i][name],
             'email': df.iloc[i][emails],
-            'attachment': "attachments" + df.iloc[i][attachments] + ".pdf"
+            'attachment': "attachments/" + df.iloc[i][attachments] + ".pdf"
         })
     
     if DEBUG_MODE:
