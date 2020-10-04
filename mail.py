@@ -1,3 +1,4 @@
+#Importing all the required libraries
 import os
 import smtplib
 import data
@@ -7,13 +8,16 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from dotenv import load_dotenv
 
+#Adding the environment variables
 load_dotenv('.env')
 EMAIL_ADDRESS = os.environ.get('SENDER_MAIL')
 EMAIL_PASSWORD = os.environ.get('SENDER_PWD')
 EMAIL_PORT = os.environ.get('SENDER_PORT')
 EMAIL_SMTP = os.environ.get('SENDER_SMTP')
 
+#Send emails to the contacts with the certificates
 def send_emails(contacts, coupons):
+    #Loop for counting contacts and coupons in the zip file
     for contact, coupon in zip(contacts, coupons[:len(contacts)]):
         try:
             msg = MIMEMultipart()
